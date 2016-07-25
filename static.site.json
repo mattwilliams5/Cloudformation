@@ -83,6 +83,21 @@
 							"chkconfig httpd on\n"
 						]]
 					}
+				},
+				"WebserverSecurityGroup": {
+					"Type": "AWS::EC2::SecurityGroup",
+					"Properties": {
+						"GroupDescription": "simple-static-site webserver",
+						"VpcId": {
+							"Ref": "VPC"
+						},
+						"SecurityGroupIngress": [{
+							"CidrIp": "0.0.0.0/0",
+							"FromPort": 443,
+							"IpProtocol": "tcp",
+							"ToPort": 443
+						}]
+					}
 				}
 			}
 		}
