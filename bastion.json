@@ -1,0 +1,17 @@
+{
+    "AWSTempletateFormatVersion": "2019-09-09",
+    "Description": "SSH Bastion Host",
+    "Resources": {
+        "EC2Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties":{
+                "ImageId": "ami-0c37fa61",
+                "InstanceType": "t2.micro",
+                "NetworkInterfaces": [{"SubnetId": "..."}]
+            }
+ 
+        "ElasticIp": {...},
+        "SercurityGroup": {...}
+      }
+    }
+}
